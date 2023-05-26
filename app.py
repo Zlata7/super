@@ -32,10 +32,10 @@ def contrast():
     if not recaptcha_response:
         abort(400, 'reCAPTCHA verification failed')
     payload = {
-        'secret': '6LecSj0mAAAAAAGMIMX_flICcedZJI0KinpJimCT',
+        'secret': '6Ld81T8mAAAAAMtrziq0zidY6o_ApvgEWvz4FkI9',
         'response': recaptcha_response
     }
-    response = requests.post('6Ld81T8mAAAAAMtrziq0zidY6o_ApvgEWvz4FkI9', payload).json()
+    response = requests.post('https://www.google.com/recaptcha/api/siteverify', payload).json()
     if not response['success']:
         abort(400, 'reCAPTCHA verification failed')
 
